@@ -1,0 +1,11 @@
+{{ $pages := where .Site.RegularPages "Type" "posts" }}
+{{ $recent := .Scratch.Get "pages" }}
+
+{{/* Get the 5 most recent posts */}}
+{{ $recent = $pages.ByDate.Reverse | first 5 }}
+
+<ul>
+{{ range $recent }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>
