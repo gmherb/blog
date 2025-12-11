@@ -1,0 +1,36 @@
+baseURL: 'https://gmherb.xyz/'
+languageCode: 'en-us'
+theme: 'PaperMod'
+title: 'gmherb'
+menu:
+  main:
+    - name: About
+      url: "/about"
+    - name: Blog
+      url: "/blog"
+    - name: Home
+      url: "/"
+
+params:
+  defaultTheme: auto
+  disableThemeToggle: true
+  profileMode:
+    enabled: true
+    title: "Gregory M. Herbster"
+    subtitle: "Experienced DevOps Engineer and lifelong learner with a focus on Linux, security, and networking."
+    imageUrl: "https://github.com/gmherb.png"
+    imageHeight: 100
+    imageWidth: 100
+    alignSocialIconsTo: "center"
+    buttons: []
+  socialIcons:
+    - name: github
+      url: "https://github.com/gmherb"
+    - name: gitlab
+      url: "https://gitlab.com/gmherb"
+    - name: linkedin
+      url: "https://linkedin.com/in/gregory-herbster-78303787"
+    - name: pgpkey
+      url: "https://gmherb.xyz/pgp.txt"
+    - name: email
+      url: "mailto:me@gmherb.xyz"
