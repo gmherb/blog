@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -18,9 +20,6 @@ jobs:
           
       - name: Build Hugo site
         run: hugo build --minify
-
-      - name: List Hugo build output
-        run: ls -R public/
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
