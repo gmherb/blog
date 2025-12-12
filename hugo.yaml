@@ -30,7 +30,7 @@ params:
       url: "https://gitlab.com/gmherb"
     - name: linkedin
       url: "https://linkedin.com/in/gregory-herbster-78303787"
-    - name: pgpkey
-      url: "https://gmherb.xyz/pgp.txt"
     - name: email
       url: "mailto:me@gmherb.xyz"
+    - name: pgpkey
+      url: "/keys/gmherb.asc"
