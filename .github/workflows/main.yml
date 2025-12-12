@@ -1,0 +1,28 @@
+name: Hugo Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v4
+        with:
+          hugo-version: '0.152.2' # latest
+          
+      - name: Build Hugo site
+        run: hugo -D
+
+      - name: Setup GCP Credentials
+        run: echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcp-key.json
+
+      - - name: Sync files to GCS
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/gcp-key.json
+        run: gsutil -m rsync -r ./public gs://${{ secrets.GCP_BUCKET }}
