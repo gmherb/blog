@@ -19,13 +19,17 @@ jobs:
       - name: Build Hugo site
         run: hugo build --minify
 
+      - name: List Hugo build output
+        run: ls -R public/
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
-      - name: Setup Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
-
       - name: Upload files to GCS
-        run: gsutil -m rsync -r -d ./public gs://${{ secrets.GCP_BUCKET }}
+        uses: google-github-actions/upload-cloud-storage@v3
+        with:
+          path: ./public
+          destination: ${{ secrets.GCP_BUCKET }}
+          parent: false
