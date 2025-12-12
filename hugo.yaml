@@ -34,3 +34,7 @@ params:
       url: "mailto:me@gmherb.xyz"
     - name: pgpkey
       url: "/keys/gmherb.asc"
+outputs:
+  home:
+    - HTML
+    - RSS

@@ -17,7 +17,7 @@ jobs:
           hugo-version: '0.152.2' # latest
           
       - name: Build Hugo site
-        run: hugo build
+        run: hugo build --minify
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
