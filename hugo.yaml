@@ -18,7 +18,7 @@ params:
     enabled: true
     title: "Gregory M. Herbster"
     subtitle: "Experienced DevOps Engineer and lifelong learner with a focus on Linux, security, and networking."
-    imageUrl: "https://github.com/gmherb.png"
+    imageUrl: "https://avatars.githubusercontent.com/u/13892557"
     imageHeight: 100
     imageWidth: 100
     alignSocialIconsTo: "center"
